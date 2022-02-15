@@ -4,3 +4,31 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
+.grid-wrapper{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid{
+    width: 500px;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    aspect-ratio: 1;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+}
