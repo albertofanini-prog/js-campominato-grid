@@ -5,11 +5,32 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 200px;
+}
+
+body{
+}
+
+#difficoltà{
+    width: 150px;
+}
+
+.play{
+    width: 100px;
+    cursor: pointer;
+}
+
 .grid-wrapper{
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #7FFFD4;
 }
 
 .grid{
