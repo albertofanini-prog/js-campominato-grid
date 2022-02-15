@@ -53,3 +53,7 @@ body{
     font-size: 22px;
     cursor: pointer;
 }
+
+.blue{
+    background-color: blue;
+}

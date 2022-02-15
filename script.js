@@ -22,7 +22,7 @@ let grid = document.querySelector('.grid');
 
 //Generare i quadrati
 function squareGen(rows, columns){
-    for(let i= 0; i < rows; i++){
+    for(let i= 0; i < 100; i++){
         let square = document.createElement('div');
         square.classList.add('square');
         square.append(+1);
@@ -48,3 +48,16 @@ play.addEventListener('click', function(){
     }
 
 })
+
+//Colorare al click
+function colora(square){
+    wrapper = document.querySelector('grid');
+    quadrato = wrapper.querySelector('square');
+    for(i=0;i<quadrato.length;i++)
+    {
+        if(quadrato*square == square)
+        {
+            document.getElementById(elementi*id).className = ".blue";
+        }
+    }
+}
