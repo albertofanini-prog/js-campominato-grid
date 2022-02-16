@@ -32,7 +32,7 @@ function squareGen(rows, columns){
 
 
 //Renderli visibili
-play.addEventListener('click', function(){
+play.addEventListener('click',() => {
     switch(difficult.value){
         case 'easy':
             squareGen(100, 10);
