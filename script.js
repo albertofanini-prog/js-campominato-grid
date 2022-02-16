@@ -9,55 +9,55 @@
 
 
 //Variabili
+const options = document.getElementById('options');
+const play = document.getElementById('play');
+const game = document.getElementById('game');
 
-//Nominare il click del bottone
-let play = document.querySelector('.play');
+//Usare una funzione che genera la griglia in base all'opzione
+const start = () =>{
+    //Nominare la casella
+    let square;
+    //Nominare la colonna
+    let column;
 
-//Nominare i livelli di difficoltà
-let difficult = document.getElementById('difficoltà');
-
-//Nominare il contenitore dei numeri
-let grid = document.querySelector('.grid');
-
-
-//Generare i quadrati
-function squareGen(rows, columns){
-    for(let i= 0; i < 100; i++){
-        let square = document.createElement('div');
-        square.classList.add('square');
-        square.append(+1);
-        grid.appendChild(square);
-    }
-}
-
-
-//Renderli visibili
-play.addEventListener('click',() => {
-    switch(difficult.value){
+    //Generare le tre casistiche
+    switch (options.value){
         case 'easy':
-            squareGen(100, 10);
+            //Dichiarare numero celle
+            square = 100;
+            //Dichiarare numero colonne
+            column = 10;
             break;
-
-        case 'medium':
-            squareGen(81,9);
+        
+        case 'normal':
+            //Dichiarare numero celle
+            square = 81;
+            //Dichiarare numero colonne
+            column = 9;
             break;
-
         case 'crazy':
-            squareGen(49,7);
+            //Dichiarare numero celle
+            square = 49;
+            //Dichiarare numero colonne
+            column = 7;
             break;
+        default:
+            square = 100;
+            column = 10;
     }
 
-})
+    //Resettare la pagina alla fine dello swicth
+    game.innerHTML = '';
 
-//Colorare al click
-function colora(square){
-    wrapper = document.querySelector('grid');
-    quadrato = wrapper.querySelector('square');
-    for(i=0;i<quadrato.length;i++)
-    {
-        if(quadrato*square == square)
-        {
-            document.getElementById(elementi*id).className = ".blue";
-        }
+    //Creare il ciclo che genera i numeri e le caselle
+    for(let i = 0; i < square; i++){
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.style.width = `calc(100% / ${column})`;
+        box.append(i + 1);
+        game.append(box);
     }
 }
+
+//Assegnare l'evento al button
+play.addEventListener('click',start);
